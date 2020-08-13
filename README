@@ -1,0 +1,22 @@
+[기능]
+#dark & white 모드
+#sorabol color 테마 (color.css 참고)
+#scrollbar 꾸미기 <chrome, firefox> (interface.css 참고)
+#Backdrop filter로 header menu BLUR효과 <chrome> (nav_header.css 참고)
+#svg 파일 로고 (school.svg)
+
+[TODO]
+#css 파일 분할
+#Page loading Effect
+#***브라우저 호환성(ie)*** <-- 모든 브라우저에서 제대로 표시되는지 확인
+#Menu화면일 때 page scroll멈춤
+#reset.css
+
+[파일 정보]
+#background.png = 서라벌vr 캡쳐 후 편집
+#school.svg = 서라벌 로고 svg 버전
+
+#sorabolVR.png = 서라벌vr 캡쳐
+
+#logo.jpg = 인터넷에서 다운로드
+#school_image.jpg = 인터넷에서 다운로드

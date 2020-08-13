@@ -1,0 +1,51 @@
+/*
+ * Media Querie
+ */
+/* Mobile */
+@media only screen and (max-width: 600px) {
+
+    /* container */
+    #container > .page {
+        grid-template-columns: 100%;
+        grid-template-rows: 10vh 1fr 1fr 10vh;
+        grid-template-areas:
+            "."
+            "top"
+            "bottom"
+            ".";
+    }
+
+    #container .page .info {
+        grid-area: bottom !important;
+    }
+
+    #container .page .image {
+        grid-area: top !important;
+    }
+
+    /* header nav */
+    #header_nav {
+        bottom: 0;
+    }
+
+    #header_nav #menu_btn {
+        grid-area: btn2;
+    }
+
+    /* menu */
+    #menu {
+        overflow: auto;
+
+        grid-template-rows: 45% 5% auto 5%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "title"
+            "btn"
+            "menu"
+            "c";
+    }
+
+    #menu #copyright p {
+        padding-bottom: 10vh;
+    }
+}

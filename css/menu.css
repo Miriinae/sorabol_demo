@@ -1,0 +1,110 @@
+/* Menu */
+#menu {
+    position: fixed;
+    visibility: hidden;
+    
+    z-index: 3;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: var(--sorabol-black);
+    
+    opacity: 0;
+    
+    transition: opacity 0.3s ease; 
+    
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 85% 10% 5%;
+    grid-template-areas: 
+        "title menu"
+        "btn menu"
+        "c c";
+}
+
+/* visibility: https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property */
+.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#menu #menu-title {
+    grid-area: title;
+    
+    padding: 6vh 0;
+    
+    text-align: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu #menu-title h1 {
+    display: inline-block;
+    
+    margin: 10px;
+}
+
+#menu #theme_btn {
+    grid-area: btn;
+    text-align: center;
+}
+
+#menu #theme_btn p {
+    font-size: 1rem;
+}
+
+#menu #theme_btn .checkmark::before {
+    top: -0.1rem;
+}
+
+#menu #menu-wrapper {
+    grid-area: menu;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: space-around;
+    
+    padding: 6vh 0;
+}
+
+#menu #menu-wrapper section {
+    flex-shrink: 3;
+}
+
+#menu section > a::after {
+    display: none;
+}
+
+#menu section h1 {
+    color: var(--sorabol-black);
+    background-color: var(--sorabol-white);
+    
+    padding: 0.2rem 3rem;
+    margin: 10px;
+}
+
+#menu #menu-wrapper ul {
+    display: none;
+}
+
+#menu #menu-wrapper ul > li {
+    list-style-type: none;
+    
+    font-size: 2rem;
+}
+
+#menu #copyright {
+    grid-area: c;
+    text-align: center;
+}
+
+#menu #copyright p {
+    margin: 0;
+    font-size: 1rem;
+}

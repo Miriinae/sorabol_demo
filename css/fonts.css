@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Gothic A1';
+    src: url(../fonts/Gothic_A1/GothicA1-Regular.ttf);
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    /*중요: https://developer.mozilla.org/ko/docs/Web/CSS/word-break */
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+p {
+    font-size: 2rem;
+}
