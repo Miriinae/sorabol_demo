@@ -128,13 +128,22 @@ main {
 #container .page {
     width: 100%;
     height: 100vh;
+    min-height: 500px;
 
     box-sizing: border-box;
+    padding: 10vh 2vw;
 
     display: grid;
     grid-template-columns: 10vw 2fr 1fr 10vw;
     grid-template-rows: 100%;
-    grid-template-areas: ". left right .";
+    grid-template-areas: ". image info .";
+}
+
+/* even page */
+#container .page:nth-child(2n) {
+    grid-template-columns: 10vw 1fr 2fr 10vw;
+    grid-template-rows: 100%;
+    grid-template-areas: ". info image .";
 }
 
 /* info & image */
@@ -143,6 +152,8 @@ main {
 
 /* info */
 #container .info {
+    grid-area: info;
+    
     padding: 20px;
 }
 
@@ -155,34 +166,18 @@ main {
 }
 
 /* image */
-#container .image {}
+#container .image {
+    grid-area: image;
+}
 
 #container .image img {
     width: 100%;
-    height: 50vh;
+    height: 100%;
     object-fit: cover;
 
     border-radius: 1rem;
 
     box-shadow: 0 10px 150px var(--black);
-}
-
-/* even page */
-#container .page:nth-child(2n) > .info {
-    grid-area: left;
-}
-
-#container .page:nth-child(2n) > .image {
-    grid-area: right;
-}
-
-/* odd page */
-#container .page:nth-child(2n+1) > .info {
-    grid-area: right;
-}
-
-#container .page:nth-child(2n+1) > .image {
-    grid-area: left;
 }
 
 /* intro page */
@@ -195,6 +190,8 @@ main {
         ". bottom .";
 
     text-align: center;
+    
+    min-height: 500px;
 }
 
 #container #intro .info {
