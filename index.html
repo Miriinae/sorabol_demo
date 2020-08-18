@@ -4,13 +4,21 @@
 <head>
     <meta charset="utf-8" />
 
+    <!-- css 초기화 -->
+    <link rel="stylesheet" href="./css/reset.css" />
+
+    <!-- 기본 css -->
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/color.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/interface.css" />
+
+    <!-- 헤더 네비게이션 & 메뉴 css -->
     <link rel="stylesheet" href="./css/nav_header.css" />
     <link rel="stylesheet" href="./css/menu.css" />
-    <link rel="stylesheet" href="./css/interface.css" />
-    <link rel="stylesheet" href="./css/media_query.css" />
+
+    <!-- 현재 파일 전용 css -->
+    <link rel="stylesheet" href="./css/home.css" />
 
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
@@ -19,19 +27,30 @@
 </head>
 
 <body>
+    <!-- --가장 위쪽에 붙어있는 헤더 네비게이션--
+      -- 왼쪽에 메뉴를 열 수 있는 버튼(<button>)과 
+      -- 중앙에 홈페이지 링크(<a>)가 있음
+      -- 
+      -- 헤더 네비게이션은 모바일일때 위치가 밑으로 바뀜(nav_header.css 참고)
+      --
+      -- 메뉴버튼은 클릭 시 =모양이 x모양으로 변한다.(nav_header.css 참고)
+      -- 또한 모바일일때는 위치가 오른쪽으로 바뀜
+      -->
     <nav id="header_nav">
-        <div id="menu_btn">
+        <button id="menu_btn">
             <div class="menu_bar" id="menu_bar-1"></div>
             <div class="menu_bar" id="menu_bar-2"></div>
-        </div>
+        </button>
         <div id="home">
             <a href="#"><img id="home_img" src="./images/school.svg" alt="메인 페이지"></a>
         </div>
     </nav>
+    <!-- 메뉴 리스트 -->
     <nav id="menu">
         <div id="menu-title">
             <h1>메뉴</h1>
         </div>
+        <!-- 어두운 테마 사용 버튼 -->
         <div id="theme_btn">
             <label class="checkbox_container">
                 <input id="theme_change" type="checkbox" checked="checked" name="dark mode">
@@ -39,7 +58,12 @@
                 <p class="check_text">어두운 테마 사용</p>
             </label>
         </div>
+        <!-- 메뉴 -->
         <div id="menu-wrapper">
+            <!-- <section>안쪽의 ul은 카테고리 나눈것
+              -- [menu.css]에서 "display: none"으로 숨김
+              -- 필요시 제거 하거나 "display: none"지우고 사용 가능
+              -->
             <section>
                 <a href="#">
                     <h1>교내 일정</h1>
@@ -104,22 +128,27 @@
                 </ul>
             </section>
         </div>
+        <!-- copyright 자리 -->
         <div id="copyright">
             <p>copyright</p>
         </div>
     </nav>
 
-    <header id="header" style="will-change: opacity">
+    <!-- 상단에 고정되어 있는 헤더 -->
+    <header id="header" class="padding">
         <div class="info">
             <h1 id="title">서라벌 길라잡이</h1>
             <p id="subtitle">서라벌고등학교의 정보를 손쉽게.</p>
         </div>
         <div id="header-background"></div>
     </header>
+    <!-- 밑의 <main>이 위의 <header>의 아래에 있게 하는 div -->
     <div id="header-place"></div>
+    <!-- 주 내용 -->
     <main>
         <section id="container">
-            <article class="page" id="intro">
+            <article class="page padding" id="intro">
+                <!-- 정보 -->
                 <div class="info">
                     <h1>서라벌 길라잡이</h1>
                     <p>
@@ -127,11 +156,12 @@
                         신입생 및 재학생이 학교의 정보를 쉽게 알아볼 수 있도록 제작하였습니다.
                     </p>
                 </div>
+                <!-- 관련 사진(그림) -->
                 <div class="image">
                     <img src="./images/sample.jpg" alt="서라벌 로고">
                 </div>
             </article>
-            <article class="page" id="page2">
+            <article class="page padding" id="page2">
                 <div class="info">
                     <h1>교내일정</h1>
                     <p>
@@ -143,7 +173,7 @@
                     <img src="./images/sample.jpg" alt="">
                 </div>
             </article>
-            <article class="page" id="page3">
+            <article class="page padding" id="page3">
                 <div class="info">
                     <h1>생활규정</h1>
                     <p>
@@ -155,7 +185,7 @@
                     <img src="./images/sample.jpg" alt="">
                 </div>
             </article>
-            <article class="page" id="page4">
+            <article class="page padding" id="page4">
                 <div class="info">
                     <h1>교내 동아리</h1>
                     <p>
@@ -167,9 +197,9 @@
                     <img src="./images/sample.jpg" alt="">
                 </div>
             </article>
-            <article class="page" id="page5">
+            <article class="page padding" id="page5">
                 <div class="info">
-                    <h1>서라벌VR</h1>
+                    <h1>서라벌 VR</h1>
                     <p>
                         서라벌의 교내를 360°로 체험해보세요
                     </p>
@@ -179,7 +209,7 @@
                     <img src="./images/sorabolVR.png" alt="서라벌 VR">
                 </div>
             </article>
-            <article class="page" id="outro">
+            <article class="page padding" id="outro">
                 <div id="dev_info-container">
                     <h1>서라벌 길라잡이 개발진</h1>
                     <p>
@@ -191,7 +221,9 @@
         </section>
     </main>
 
-    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/home.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
+    <script type="text/javascript" src="./js/nav_header.js"></script>
     <script type="text/javascript">
         fadeHeaderWhenScroll();
         toggleMenu();

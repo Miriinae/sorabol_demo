@@ -1,78 +1,90 @@
+/*
+ * 헤더 네비게이션 전용 css
+ */
+
 #header_nav {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 4;
-    
+
     display: grid;
-    grid-template-columns: 3vw 40px auto 40px 3vw;
+    grid-template-columns: 40px 1fr 40px;
     grid-template-rows: 1vh 40px 1vh;
-    grid-template-areas: 
-        ". . . . ."
-        ". btn1 m btn2 ."
-        ". . . . .";
-    
-    box-sizing: border-box;
-    
+    grid-template-areas:
+        ". . ."
+        "btn1 m btn2"
+        ". . .";
+
     width: 100vw;
-    
+    padding: 0 10vw;
+    box-sizing: border-box;
+
     overflow-y: visible;
     overflow-x: hidden;
-    
+
     background-color: transparent;
     border: none;
-    
+
     backdrop-filter: blur(5px);
 }
 
 /* menu button */
 #header_nav #menu_btn {
     grid-area: btn1;
-    content: " ";
-    
-    padding: 7.4px 0;
-    
+
+    padding: 0;
+
+    border-width: 0;
     border-radius: 20px;
-    
+
     background-color: var(--sorabol-white);
-    
+
     text-align: center;
     justify-content: center;
-    
+
     z-index: 4;
+    
+    transition: none;
 }
 
 #header_nav #menu_btn:hover {
     cursor: pointer;
 }
 
+#header_nav #menu_btn:active {
+    transform: none;
+}
+
 #header_nav #menu_btn .menu_bar {
     width: 30px;
     height: 3px;
-    
-    margin: 6px auto;
-    
+
+    margin: 6.8px auto;
+
     background-color: var(--sorabol-black);
-    
+
     transition: all 0.3s ease;
 }
 
 /* transform class for toggle (= to x) */
 .makeX_top {
-    transform: translateY(4.72px) rotate(45deg);
+    transform: translateY(5.21px) rotate(45deg);
     transform-origin: center;
 }
 
 .makeX_bottom {
-    transform: translateY(-4.72px) rotate(-45deg);
+    transform: translateY(-5.21px) rotate(-45deg);
     transform-origin: center;
 }
 
 /* main page button */
 #header_nav #home {
     grid-area: m;
-    
+
     text-align: center;
     justify-content: center;
-    
+
     z-index: 4;
 }
 
@@ -86,5 +98,23 @@
 
 #header_nav #home img {
     width: auto;
-    height: 40px;;
+    height: 40px;
+}
+
+/*
+ * Media Query
+ */
+
+/* Mobile */
+@media only screen and (max-width: 900px) {
+
+    /* header nav */
+    #header_nav {
+        top: auto;
+        bottom: 0;
+    }
+
+    #header_nav #menu_btn {
+        grid-area: btn2;
+    }
 }

@@ -1,8 +1,27 @@
+/*
+ * 서라벌 색 테마 
+ */
+
+/* var([색 이름])으로 사용 가능
+ * 예) color: var(--sorabol-white); <-- color: rgb(250, 250, 240);과 같음
+ */
 :root {
     --sorabol-white: rgb(250, 250, 240);
     --sorabol-green: rgb(15, 212, 153);
     --sorabol-black: rgb(40, 40, 30);
-    
+
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
 }
+
+/*
+@media (prefers-color-scheme: light) {
+    :root {
+        --sorabol-white: rgb(40, 40, 30);
+        --sorabol-black: rgb(250, 250, 240);
+
+        --white: rgb(0, 0, 0);
+        --black: rgb(255, 255, 255);
+    }
+}
+*/

@@ -1,3 +1,7 @@
+/* 
+ * 인터페이스(button, checkbox, etc.) 정의
+ */
+
 /*
  * Button
  */
@@ -22,12 +26,18 @@ button:hover {
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.97);
     transform-origin: center;
 }
 
 /* 
- *Check Box 
+ * Check Box 
+ * <체크박스 구조>
+<label class="checkbox_container">
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    <p class="check_text">체크박스 이름</p>
+</label>
  */
 /* container */
 .checkbox_container {
@@ -109,13 +119,14 @@ a {
 
 a:visited {}
 
+/* anchor뒤에 → 추가 */
 a::after {
     content: "→";
 
     text-decoration: none;
-    
+
     display: inline-block;
-    
+
     transition: transform 0.4s ease;
 }
 
@@ -123,6 +134,7 @@ a:hover {
     cursor: pointer;
 }
 
+/* anchor를 hover했을 때 뒤에있던 →를 움직임 */
 a:hover::after {
     transform: translateX(0.3rem);
 }
@@ -132,31 +144,37 @@ a:hover::after {
  */
 
 /* for Chrome */
-::-webkit-scrollbar { /*the scrollbar.*/
+::-webkit-scrollbar {
+    /*the scrollbar.*/
     width: 10px;
 }
 
-::-webkit-scrollbar-button { /*the buttons on the scrollbar (arrows pointing upwards and downwards).*/
+::-webkit-scrollbar-button {
+    /*the buttons on the scrollbar (arrows pointing upwards and downwards).*/
     display: none;
     background-color: var(--sorabol-black);
 }
 
-::-webkit-scrollbar-thumb { /*the draggable scrolling handle.*/ 
+::-webkit-scrollbar-thumb {
+    /*the draggable scrolling handle.*/
     width: 10px;
     border-radius: 0;
-    
+
     background-color: var(--sorabol-white);
 }
 
-::-webkit-scrollbar-track { /*the track (progress bar) of the scrollbar.*/
+::-webkit-scrollbar-track {
+    /*the track (progress bar) of the scrollbar.*/
     background-color: var(--sorabol-black);
 }
 
-::-webkit-scrollbar-corner { /*the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.*/
+::-webkit-scrollbar-corner {
+    /*the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.*/
     background-color: var(--sorabol-black);
 }
 
-::-webkit-resizer { /*the draggable resizing handle that appears at the bottom corner of some elements.*/
+::-webkit-resizer {
+    /*the draggable resizing handle that appears at the bottom corner of some elements.*/
     background-color: var(--sorabol-black);
 }
 
@@ -165,4 +183,26 @@ a:hover::after {
     scrollbar-color: var(--sorabol-white) var(--sorabol-black);
     scrollbar-width: 10px;
     scrollber-height: 10px;
+}
+
+/*
+ * Smooth scroll
+ */
+* {
+    scroll-behavior: smooth;
+}
+
+/*
+ * Media Query
+ */
+
+/* Mobile */
+@media only screen and (max-width: 900px) {
+
+    /* hide scrollbar */
+    /* for Chrome */
+    body::-webkit-scrollbar,
+    #menu::-webkit-scrollbar {
+        display: none;
+    }
 }

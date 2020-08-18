@@ -1,18 +1,38 @@
+/*
+ * 폰트
+ */
+
+/* Gothic A1(삭제 예정) */
 @font-face {
     font-family: 'Gothic A1';
     src: url(../fonts/Gothic_A1/GothicA1-Regular.ttf);
 }
 
+/* Noto Sans KR */
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url(../fonts/Noto_Sans_KR/NotoSansKR-Bold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url(../fonts/Noto_Sans_KR/NotoSansKR-Thin.otf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url(../fonts/Noto_Sans_KR/NotoSansKR-Regular.otf);
+  font-weight: 400;
+}
+
+/* font 관련 설정 */
 * {
+    /* font smoothing */
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /*word-break: https://developer.mozilla.org/ko/docs/Web/CSS/word-break */
     word-break: keep-all;
-    /*중요: https://developer.mozilla.org/ko/docs/Web/CSS/word-break */
-}
-
-h1 {
-    font-size: 4rem;
-}
-
-p {
-    font-size: 2rem;
 }

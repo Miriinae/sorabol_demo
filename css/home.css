@@ -1,0 +1,237 @@
+/*
+ * home.html 전용 css
+ */
+
+/*
+ * Header
+ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 10vw;
+
+    box-sizing: border-box;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    will-change: opacity;
+}
+
+header .info {}
+
+header #title {
+    font-size: calc(5rem + 1vw);
+    font-weight: 600;
+    
+    margin: 0;
+    padding: 0;
+}
+
+header #subtitle {
+    font-size: calc(2rem + 1vw);
+    font-weight: 100;
+}
+
+/* header의 배경 */
+header #header-background {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-position: 45vw center;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+
+    filter:
+        /*drop-shadow(-10px 0 30rem var(--black))*/
+        grayscale(100%);
+}
+
+/* Header place */
+#header-place {
+    position: relative;
+
+    height: 100vh;
+
+    z-index: -2;
+}
+
+/*
+ * Main
+ */
+main {
+    position: relative;
+
+    background-color: var(--sorabol-black);
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: visible;
+
+    z-index: 2;
+}
+
+/*
+ * page Container
+ */
+#container {
+    width: 100%;
+    height: 100vh;
+
+    box-sizing: border-box;
+}
+
+#container h1 {
+    background-color: var(--sorabol-white);
+    color: var(--sorabol-black);
+
+    display: inline-block;
+}
+
+#container .page {
+    width: 100%;
+    /*height: 100vh;*/
+    /* 최소 높이를 주어서 .page끼리 겹치지 않게 함 */
+    min-height: 300px;
+
+    box-sizing: border-box;
+    padding: 10vh 0;
+
+    display: grid;
+    grid-template-columns: 2fr 2vw 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "image . info";
+}
+
+/* 짝수 번째의 .page */
+#container .page:nth-child(2n) {
+    grid-template-columns: 1fr 2vw 2fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "info . image";
+}
+
+/* info & image 공통 style */
+#container .info,
+#container .image {}
+
+/* info */
+#container .info {
+    grid-area: info;
+}
+
+/* image */
+#container .image {
+    grid-area: image;
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+#container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 2vmin;
+
+    box-shadow: 0 10px 150px var(--black);
+}
+
+/* intro page */
+#container #intro {
+    display: grid;
+    grid-template-columns: 80vw;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas:
+        "top"
+        "bottom";
+
+    text-align: center;
+
+    min-height: 500px;
+}
+
+#container #intro .info {
+    grid-area: bottom;
+}
+
+#container #intro .info p {
+    display: inline-block;
+}
+
+#container #intro .image {
+    grid-area: top;
+}
+
+#container #intro .image img {
+    max-width: 100vw;
+}
+
+/* outro page */
+#container #outro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 80vh;
+
+    padding: 10vh 0;
+
+    background-color: var(--sorabol-white);
+}
+
+#container #outro #dev_info-container {
+    text-align: center;
+}
+
+#container #outro #dev_info-container * {
+    color: var(--sorabol-black);
+}
+
+/*
+ * Media Query
+ */
+
+/* Mobile */
+@media only screen and (max-width: 900px) {
+
+    /* container */
+    #container > .page {
+        grid-template-columns: 100% !important;
+        grid-template-rows: 10vh 39vh 2vh 39vh 10vh !important;
+        grid-template-areas:
+            "."
+            "top"
+            "."
+            "bottom"
+            "." !important;
+    }
+
+    #container .page {
+        padding: 0 !important;
+    }
+
+    #container .page .info {
+        grid-area: bottom !important;
+    }
+
+    #container .page .image {
+        grid-area: top !important;
+    }
+}

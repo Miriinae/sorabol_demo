@@ -7,10 +7,8 @@
 #모바일 지원
 
 [TODO]
-#css 파일 분할
 #Page loading Effect
 #***브라우저 호환성(ie, safari)*** <-- 모든 브라우저에서 제대로 표시되는지 확인
-#reset.css
 
 [파일 정보]
 #background.png = 서라벌vr 캡쳐 후 편집
